@@ -19,6 +19,8 @@
     "city database"
   ],
   "dependencies": {
-    "request": "2.55.*"
+    "request": "2.55.*",
+    "adm-zip": "0.4.*",
+    "async": "1.*"
   }
 }

@@ -2,17 +2,21 @@
  * Created by tigran on 5/24/15.
  */
 
-var request = require('request');
-console.log("Getting Country Codes");
-request.get('http://download.geonames.org/export/dump/countryInfo.txt', function (error, response, body) {
-    if (!error && response.statusCode == 200) {
-        var lines = body.split("\n"), fields;
+var country = require("./lib/country")
+    , city = require("./lib/city");
 
-        for(var i in lines)
-        {
-            if(lines[i].charAt(0) == "#") continue;
-            fields = lines[i].split("\t");
-            console.log(fields[0]);
-        }
+console.log("Loading Countries !");
+
+country.load(function (err) {
+    if(err)
+    {
+        console.log(err);
+        return;
     }
+    console.log("Getting cities for " + country.countries[0].code);
+    city.geoData(country.countries[0].code, function(error, data){
+        city.parseGeoData(data, function(){
+            console.log(city.geoInfo[0]);
+        });
+    });
 });
