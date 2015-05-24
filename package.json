@@ -1,0 +1,24 @@
+{
+  "name": "geo-database",
+  "version": "0.0.1",
+  "description": "Parse GeoNames and keep it in database",
+  "main": "geo-names.js",
+  "author": "Tigran Bayburtsyan <tigran@flaxton.io>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tigran-bayburtsyan/geo-database.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tigran-bayburtsyan/geo-database/issues"
+  },
+  "homepage": "https://github.com/tigran-bayburtsyan/geo-database",
+  "keywords": [
+    "geonames",
+    "geo",
+    "city database"
+  ],
+  "dependencies": {
+    "request": "2.55.*"
+  }
+}
